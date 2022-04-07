@@ -9,14 +9,18 @@ class Header extends Component {
   handleChange = (e) => {
     this.setState({ searchTerm: e.target.value });
   };
-  handleKeyPress = (e) => {};
+  handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      this.props.search(this.state.searchTerm);
+    }
+  };
 
   render() {
     const { category, changeCategory } = this.props;
     return (
       <div className="my-4">
         <h1 className="mb-4" style={{ fontWeight: 300 }}>
-          Block Buster Headlines
+          Important Headlines of Today
         </h1>
         <input
           type="search"

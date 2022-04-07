@@ -26,6 +26,8 @@ export default class News {
       this._totalPage = Math.ceil(data.totalResults / this._pageSize);
       return {
         article: data.articles,
+        isNext: this._isNext(),
+        isPrevious: this._isPrevious(),
         totalPage: this._totalPage,
         currentPage: this._currentPage,
         category: this._category,
@@ -66,7 +68,7 @@ export default class News {
     return this.getNews();
   }
   _getURL() {
-    let url = "/?";
+    let url = "?";
     if (this._category) url += `category=${this._category}`;
     if (this._searchTerm) url += `&q=${this._searchTerm}`;
     if (this._pageSize) url += `&pageSize=${this._pageSize}`;
