@@ -23,6 +23,7 @@ class Header extends Component {
           Important Headlines of Today
         </h1>
         <input
+          ref={this.props.innerRef}
           type="search"
           className="form-control"
           placeholder="Enter Anything & Press Enter To Search"
@@ -58,4 +59,6 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default React.forwardRef((props, ref) => (
+  <Header {...props} innerRef={ref} />
+));
