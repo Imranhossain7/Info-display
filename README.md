@@ -1,3 +1,6 @@
+A web-application to show different kinds of news using NEWS API ,made by React.js and Bootstrap mainly.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
